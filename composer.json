@@ -9,7 +9,7 @@
             "email": "support@sms.to"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "hubspot/api-client": "^8.2"
@@ -29,5 +29,15 @@
             "@php artisan phmoney_provider:update",
             "@php artisan migrate"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Smsto\\Hubspot\\HubspotServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
