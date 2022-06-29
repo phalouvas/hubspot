@@ -6,6 +6,9 @@ use Exception;
 use HubSpot\Client\Files\Model\Folder;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UpdateCommand extends Command
 {
