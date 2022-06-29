@@ -9,7 +9,7 @@
             "email": "support@sms.to"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
         "hubspot/api-client": "^8.2"
