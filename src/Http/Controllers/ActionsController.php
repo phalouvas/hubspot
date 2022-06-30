@@ -60,7 +60,7 @@ class ActionsController extends Controller
      */
     public function update(UpdateActionsRequest $request, int $action_id)
     {
-        $published = $request->validated('published') ? 'true' : 'false';
+        $published = $request->published ? 'true' : 'false';
         $endpoint = "https://api.hubapi.com/automation/v4/actions/" . config('hubspot.app_id') . "/$action_id" . "?hapikey=" . config('hubspot.api_key');
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $endpoint);
@@ -76,7 +76,7 @@ class ActionsController extends Controller
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
         curl_setopt($ch, CURLOPT_POSTFIELDS, '
         {
-            "actionUrl": "' . $request->validated('actionUrl') . '",
+            "actionUrl": "' . $request->actionUrl . '",
             "published": ' . $published . '
         }
         ');
